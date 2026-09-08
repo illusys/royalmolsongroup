@@ -52,7 +52,7 @@ function cardTemplate(product){
       <h3>${product.name}</h3>
       <p class="product-meta">${product.meta}</p>
       <div class="price-row">${price}</div>
-      <div class="qty-control"><label class="sr-only" for="qty-${product.model.replace(/[^a-zA-Z0-9]/g,'')}">Quantity</label><input id="qty-${product.model.replace(/[^a-zA-Z0-9]/g,'')}" class="qty" type="number" min="1" value="1" aria-label="Quantity"><span class="price-note">units</span></div>
+      <div class="qty-control"><input id="qty-${product.model.replace(/[^a-zA-Z0-9]/g,'')}" class="qty" type="number" min="1" value="1" aria-label="Quantity"><span class="price-note">units</span></div>
       <div class="card-actions">
         <a class="button button-primary buy-card" href="#">Chat to buy</a>
         <a class="button button-outline quote-card-action" href="#">Wholesale</a>
