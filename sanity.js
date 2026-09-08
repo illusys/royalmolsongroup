@@ -1,0 +1,3 @@
+window.RMG_SANITY={projectId:'tfkipsed',dataset:'production',apiVersion:'2026-09-08'};
+window.rmgSanityQuery=async function(query){const c=window.RMG_SANITY;const url='https://'+c.projectId+'.api.sanity.io/v'+c.apiVersion+'/data/query/'+c.dataset+'?query='+encodeURIComponent(query);const response=await fetch(url);if(!response.ok)throw new Error('Catalog service unavailable');return (await response.json()).result;};
+window.rmgSanityImage=function(ref){if(!ref)return null;const m=ref.match(/^image-([a-f0-9]+)-(\d+x\d+)-([a-z]+)$/i);if(!m)return null;return 'https://cdn.sanity.io/images/'+window.RMG_SANITY.projectId+'/'+window.RMG_SANITY.dataset+'/'+m[1]+'-'+m[2]+'.'+m[3]+'?auto=format&w=800&fit=max';};
